@@ -20,11 +20,11 @@ dbConnection.getConnection(function (err, connection) {
 //create table in the database
 const users = `CREATE TABLE if not exists users(
   id int auto_increment,
+  name varchar(255) not null,
   email varchar(255) not null,
   password varchar(255) not null,
-  PRIMARY KEY (id),
-  role_id INT NOT NULL,
-  FOREIGN KEY (role_id) REFERENCES roles(id)
+  role INT NULL,
+  PRIMARY KEY (id)
 )`;
 // check table creation is ok
 dbConnection.query(users, (err, result) => {
