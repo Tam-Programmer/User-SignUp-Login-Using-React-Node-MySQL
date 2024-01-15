@@ -48,7 +48,7 @@ app.post("/register", (req, res) => {
     const values = [req.body.name, req.body.email, hashedPassword];
     dbConnection.query(sql, [values], (err, data) => {
       if (err) return res.json({ Error: "error in registering user" });
-      return res.json({ Status: "register success" });
+      return res.json({ Status: "Success" });
     });
   });
 });

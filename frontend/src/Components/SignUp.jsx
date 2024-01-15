@@ -16,7 +16,7 @@ function SignUp() {
       axios
         .post("http://localhost:3000/register", values)
         .then((res) => {
-          if (res.data.Status === "success") {
+          if (res.data.Status === "Success") {
             navigate("/login");
           } else {
             alert("error");
